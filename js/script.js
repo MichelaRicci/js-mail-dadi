@@ -69,21 +69,29 @@ const message = document.getElementById('message');
 
 let contentMessage = '';
 
+
+// Collego pulsante a event listener
+
 btnMail.addEventListener("click", function(){
-    let userMail = document.getElementById('userMail').value;
+    const userMail = document.getElementById('userMail').value;
+    let mail = false; 
 
     for (let i = 0; i < validMail.length; i++) {
         if (userMail == validMail[i]) {
-            validMail = true;
+            mail = true;
+        }
+    }
 
-            contentMessage = `<p>"La tua mail è stata riconosciuta come valida."</p>`;
+    if (mail = true) {
+        
+        contentMessage = `<p>"La tua mail è stata riconosciuta come valida."</p>`;
 
         } else {
             contentMessage = `<p>"La tua mail non è stata riconosciuta come valida."</p>`;
         }
-    } 
 
-    // Stampo in pagina
+    
+        // Stampo in pagina
      
     message.innerHTML = contentMessage;
 
