@@ -82,7 +82,7 @@ btnMail.addEventListener("click", function(){
         }
     }
 
-    if (mail = true) {
+    if (mail === true) {
         
         contentMessage = `<p>"La tua mail è stata riconosciuta come valida."</p>`;
 
