@@ -11,7 +11,7 @@ console.log('JS OK');
 
 // Inserire il pulsante e gli elementi
 
-const number = document.getElementById('btnDice');
+const btnDice = document.getElementById('btnDice');
 
 const result = document.getElementById('result');
 
@@ -20,7 +20,7 @@ let content = '';
 
 // Collego pulsante a event listener
 
-number.addEventListener("click", function(){
+btnDice.addEventListener("click", function(){
     let player = Math.floor(Math.random() * 6 + 1);
     let computer = Math.floor(Math.random() * 6 + 1);
 
@@ -64,6 +64,32 @@ number.addEventListener("click", function(){
 const btnMail = document.getElementById('btnMail');
 
 const validMail = ["tizio@mail.com", "caio@mail.com", "sempronio@mail.com"];
+
+const message = document.getElementById('message');
+
+let contentMessage = '';
+
+btnMail.addEventListener("click", function(){
+    let userMail = document.getElementById('userMail').value;
+
+    for (let i = 0; i < validMail.length; i++) {
+        if (userMail == validMail[i]) {
+            validMail = true;
+
+            contentMessage = `<p>"La tua mail è stata riconosciuta come valida."</p>`;
+
+        } else {
+            contentMessage = `<p>"La tua mail non è stata riconosciuta come valida."</p>`;
+        }
+    } 
+
+    // Stampo in pagina
+     
+    message.innerHTML = contentMessage;
+
+
+})
+
 
 
 
