@@ -12,8 +12,17 @@ const number = document.getElementById('btn');
 //collego pulsante a event listener
 
 number.addEventListener("click", function(){
-    let player = Math.floor(Math.random() * 6 +1);
+    let player = Math.floor(Math.random() * 6 + 1);
+    let computer = Math.floor(Math.random() * 6 + 1);
 
-    console.log(player);
+    console.log(player, computer);
+
+    if (player > computer) {
+        console.log("Hai vinto!");
+    } else if (computer > player) {
+        console.log("Hai perso!");
+    } else {
+        console.log("Pareggio!");
+    }
 })
 
